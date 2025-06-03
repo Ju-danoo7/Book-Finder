@@ -26,7 +26,7 @@ export default function AuthPage() {
     
     try {
       if (mode === 'signin') {
-        const { data, error } = await signIn(email, password);
+        const { error } = await signIn(email, password);
         
         if (error) throw error;
         
@@ -41,7 +41,7 @@ export default function AuthPage() {
           return;
         }
         
-        const { data, error } = await signUp(email, password);
+        const { error } = await signUp(email, password);
         
         if (error) throw error;
         

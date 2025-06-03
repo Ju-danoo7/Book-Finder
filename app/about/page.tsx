@@ -32,17 +32,15 @@ export default function AboutPage() {
     setSubmitError('');
     
     try {
-      // Initialize EmailJS with your User ID
-      // Replace 'YOUR_USER_ID' with your actual EmailJS user ID
-      emailjs.init('uS_jNunA5OVecDkCo');
+      // Initialize EmailJS with your User ID from environment variable
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID || '');
       
       // Send email using EmailJS
-      // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual service and template IDs
       const result = await emailjs.sendForm(
-        'service_xj7bx8s', 
-        'template_robaehc',
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '', 
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
         formRef.current as HTMLFormElement,
-        'uS_jNunA5OVecDkCo'
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID || ''
       );
       
       if (result.text === 'OK') {

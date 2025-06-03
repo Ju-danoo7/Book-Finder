@@ -1,9 +1,7 @@
 {
-  "/not-found": "app/not-found.js",
   "/page": "app/page.js",
   "/search/page": "app/search/page.js",
   "/about/page": "app/about/page.js",
   "/legal/page": "app/legal/page.js",
-  "/auth/page": "app/auth/page.js",
-  "/book/[id]/page": "app/book/[id]/page.js"
+  "/auth/page": "app/auth/page.js"
 }
