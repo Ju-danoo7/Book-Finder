@@ -183,7 +183,7 @@ export default function AuthPage() {
                     className="input pl-10 w-full border border-secondary-200 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     placeholder="••••••••"
                     minLength={6}
-                    required={mode !== 'reset'}
+                    required={mode === 'signin' || mode === 'signup'}
                   />
                 </div>
               </div>
